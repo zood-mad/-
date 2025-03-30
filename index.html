@@ -48,7 +48,7 @@
             z-index: 0;
         }
         .content {
-            padding: 20px;
+            padding: 10px;
             position: relative;
             z-index: 1;
         }
@@ -63,12 +63,12 @@
         p {
             font-size: 28px;
             font-family: 'Playfair Display', serif;
-            margin: 10px 0;
+            margin: 5px 0;
         }
         .calendar img {
-            width: 100%;
-            max-width: 400px;
-            margin-top: 20px;
+            width: 90%;
+            max-width: 600px;
+            margin-top: 10px;
         }
         .btn {
             display: inline-block;
@@ -113,7 +113,7 @@
         .countdown {
             font-size: 24px;
             font-weight: bold;
-            margin-bottom: 20px;
+            margin-bottom: 10px;
         }
     </style>
 </head>
@@ -121,8 +121,8 @@
     <div class="section" id="page1">
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
-            <p><strong>09.04.2025</strong></p>
             <div class="countdown" id="countdown"></div>
+            <p><strong>09.04.2025</strong></p>
             <button class="music-button" onclick="toggleMusic()">
                 <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
             </button>
@@ -138,6 +138,7 @@
         <div class="blur-overlay"></div>
         <div class="content">
             <div class="calendar">
+                <div class="countdown" id="countdown"></div>
                 <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
             </div>
         </div>
