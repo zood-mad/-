@@ -115,11 +115,6 @@
         .hidden {
             display: none;
         }
-        .countdown-image {
-            margin-top: 20px;
-            max-width: 100%;
-            border-radius: 10px;
-        }
     </style>
 </head>
 <body>
@@ -135,39 +130,13 @@
                 <source src="https://github.com/zood-mad/-/raw/main/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
             </audio>
         </div>
-            <div class="section default-bg">
-        <div class="content">
-            <p>Адрес:</p>
-            <p>Караганда, Nurkena Abdirova prospekt 12</p>
-            <a class="btn" href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16">Открыть карту</a>
-        </div>
-    </div>
-    <div class="section default-bg">
-        <div class="content">
-            <button class="btn" onclick="confirmAttendance()">Я приду</button>
-            <p id="confirmation" class="hidden">Я тебя жду!</p>
     </div>
     <div class="section default-bg">
         <div class="content">
             <p>До мероприятия:</p>
             <div class="countdown" id="countdown"></div>
-            <img class="countdown-image" src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Countdown Image">
+            <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Картинка">
         </div>
     </div>
-    <script>
-        function updateCountdown() {
-            const eventDate = new Date("April 9, 2025 15:00:00").getTime();
-            setInterval(() => {
-                const now = new Date().getTime();
-                const distance = eventDate - now;
-                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById("countdown").innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
-            }, 1000);
-        }
-        updateCountdown();
-    </script>
 </body>
 </html>
