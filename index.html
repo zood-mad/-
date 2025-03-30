@@ -6,41 +6,64 @@
     <title>Приглашение на День Рождения</title>
     <style>
         body {
-            background: linear-gradient(to right, #ff66b2, #ffccff);
+            background: linear-gradient(to right, #ff4da6, #ff99cc);
             text-align: center;
-            font-family: Arial, sans-serif;
-            color: #fff;
+            font-family: 'Poppins', sans-serif;
+            color: white;
+            margin: 0;
+            padding: 0;
         }
         .container {
             max-width: 600px;
             margin: 50px auto;
             padding: 20px;
             background: rgba(255, 255, 255, 0.2);
-            border-radius: 15px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
         }
         h1 {
-            font-size: 36px;
+            font-size: 40px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
         }
         p {
-            font-size: 20px;
-            margin: 10px 0;
+            font-size: 22px;
+            margin: 15px 0;
         }
         .highlight {
             font-weight: bold;
             color: yellow;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 20px;
+            font-weight: bold;
+            color: #ff4da6;
+            background: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: yellow;
+            color: #ff4da6;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Ты приглашен на День Рождения Айзере! 🎉</h1>
-        <p><strong>Дата:</strong> 9 августа</p>
-        <p><strong>Время:</strong> 15:00</p>
-        <p><strong>Место:</strong> кафе Janymsoul, Караганда</p>
-        <p><strong>Адрес:</strong> Проспект Нуркена Абдирова 12</p>
-        <p><strong>Дресс-код:</strong> <span class="highlight">Смелые цвета</span></p>
+        <p><strong>📅 Дата:</strong> 9 августа</p>
+        <p><strong>⏰ Время:</strong> 15:00</p>
+        <p><strong>📍 Место:</strong> кафе Janymsoul, Караганда</p>
+        <p><strong>📌 Адрес:</strong> Проспект Нуркена Абдирова 12</p>
+        <p><strong>👗 Дресс-код:</strong> <span class="highlight">Смелые цвета</span></p>
         <p>Будем веселиться и радоваться вместе! Жду тебя! 🎂🥳</p>
+        <a href="#" class="btn">Я приду! 🎈</a>
     </div>
 </body>
 </html>
