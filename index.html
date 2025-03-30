@@ -40,13 +40,6 @@
             background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;
             color: black;
         }
-        .blur-overlay {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(5px);
-            z-index: 0;
-        }
         .content {
             padding: 10px;
             position: relative;
@@ -112,8 +105,7 @@
     <div class="section" id="page1">
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
-            <div class="countdown" id="countdown"></div>
-            <p style="color: #ff9a9e;"><strong>09.04.2025</strong></p>
+            <p><strong>09.04.2025</strong></p>
             <button class="music-button" onclick="toggleMusic()">
                 <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
             </button>
@@ -123,27 +115,32 @@
         </div>
     </div>
     <div class="section default-bg">
-        <div class="blur-overlay"></div>
         <div class="content">
+            <p>До мероприятия:</p>
             <div class="countdown" id="countdown"></div>
             <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
         </div>
     </div>
     <div class="section default-bg">
-        <div class="blur-overlay"></div>
         <div class="content">
-            <p>Адрес: Janymsoul café, Караганда, проспект Нурсултана Абдирова 12</p>
-            <a class="btn" href="https://2gis.kz/karaganda/geo/70030047127688819">Я приду!</a>
+            <p>Адрес:</p>
+            <p>Караганда, Nurkena Abdirova prospekt 12</p>
+            <a class="btn" href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16">
+                <img src="https://github.com/zood-mad/-/raw/main/i%20(3).webp" alt="2GIS">
+            </a>
         </div>
     </div>
     <script>
         function updateCountdown() {
-            const eventDate = new Date("April 9, 2025 00:00:00").getTime();
+            const eventDate = new Date("April 9, 2025 15:00:00").getTime();
             setInterval(function() {
                 const now = new Date().getTime();
                 const distance = eventDate - now;
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                document.querySelectorAll(".countdown").forEach(el => el.innerHTML = `До мероприятия: ${days} дней`);
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
             }, 1000);
         }
         updateCountdown();
