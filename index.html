@@ -36,7 +36,7 @@
         .header {
             font-size: 40px;
             font-weight: bold;
-            color: #d63384;
+            color: #f8a8c7;
             font-family: 'Great Vibes', cursive;
         }
         p {
@@ -77,6 +77,14 @@
             padding: 15px;
             border-radius: 50px;
         }
+        .left {
+            text-align: left;
+            padding-left: 10%;
+        }
+        .right {
+            text-align: right;
+            padding-right: 10%;
+        }
     </style>
 </head>
 <body>
@@ -84,11 +92,6 @@
         <source src="https://github.com/zood-mad/-/raw/5e3313ead21719b9ab4732cd79dcfc54307ee1cf/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
         Ваш браузер не поддерживает аудиоплеер.
     </audio>
-    <script>
-        document.addEventListener('click', function() {
-            document.getElementById('bg-music').play();
-        });
-    </script>
     
     <div class="section" id="page1">
         <div class="content">
@@ -96,12 +99,12 @@
         </div>
     </div>
     <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
-        <div class="content">
+        <div class="content left">
             <p>Всем привет! Приглашаю вас на моё День Рождения, где будет караоке, вкусная еда и море положительных эмоций.</p>
         </div>
     </div>
     <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
-        <div class="content">
+        <div class="content right">
             <div class="calendar">
                 <div class="month">Апрель</div>
                 <div class="day">9</div>
@@ -113,7 +116,7 @@
         </div>
     </div>
     <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
-        <div class="content">
+        <div class="content left">
             <p><strong>Буду рада видеть каждого из вас!</strong></p>
             <a href="#" class="btn" onclick="document.getElementById('confirm-text').style.display = 'block'">Я приду</a>
             <div id="confirm-text" class="heart-container">Я тебя жду</div>
@@ -121,5 +124,3 @@
     </div>
 </body>
 </html>
-
-
