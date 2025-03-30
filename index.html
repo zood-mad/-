@@ -113,7 +113,7 @@
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
             <div class="countdown" id="countdown"></div>
-            <p><strong>09.04.2025</strong></p>
+            <p style="color: #ff9a9e;"><strong>09.04.2025</strong></p>
             <button class="music-button" onclick="toggleMusic()">
                 <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
             </button>
@@ -143,7 +143,7 @@
                 const now = new Date().getTime();
                 const distance = eventDate - now;
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                document.getElementById("countdown").innerHTML = `До мероприятия: ${days} дней`;
+                document.querySelectorAll(".countdown").forEach(el => el.innerHTML = `До мероприятия: ${days} дней`);
             }, 1000);
         }
         updateCountdown();
