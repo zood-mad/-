@@ -27,21 +27,20 @@
         }
         #page1 {
             background: url('https://github.com/zood-mad/-/raw/main/68513d35-cce1-429b-b601-2dda8d5251b6.jpg') center/cover no-repeat;
+            flex-direction: column;
+            display: flex;
         }
         .content {
-            background: rgba(255, 240, 245, 0.6);
             padding: 20px;
-            border-radius: 15px;
-            backdrop-filter: blur(5px);
         }
         .header {
-            font-size: 28px;
+            font-size: 40px;
             font-weight: bold;
             color: #d63384;
             font-family: 'Great Vibes', cursive;
         }
         p {
-            font-size: 18px;
+            font-size: 22px;
             font-family: 'Raleway', sans-serif;
             margin: 15px 0;
         }
@@ -77,17 +76,25 @@
             background: #d63384;
             padding: 15px;
             border-radius: 50px;
-            display: inline-block;
         }
     </style>
 </head>
 <body>
-    <audio autoplay loop>
+    <audio id="bg-music" autoplay loop>
         <source src="https://github.com/zood-mad/-/raw/5e3313ead21719b9ab4732cd79dcfc54307ee1cf/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
         Ваш браузер не поддерживает аудиоплеер.
     </audio>
+    <script>
+        document.addEventListener('click', function() {
+            document.getElementById('bg-music').play();
+        });
+    </script>
     
-    <div class="section" id="page1"></div>
+    <div class="section" id="page1">
+        <div class="content">
+            <p class="header">Приглашение на День Рождения</p>
+        </div>
+    </div>
     <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
         <div class="content">
             <p>Всем привет! Приглашаю вас на моё День Рождения, где будет караоке, вкусная еда и море положительных эмоций.</p>
@@ -109,9 +116,10 @@
         <div class="content">
             <p><strong>Буду рада видеть каждого из вас!</strong></p>
             <a href="#" class="btn" onclick="document.getElementById('confirm-text').style.display = 'block'">Я приду</a>
-            <div id="confirm-text" class="heart-container">❤️ Я тебя жду ❤️</div>
+            <div id="confirm-text" class="heart-container">Я тебя жду</div>
         </div>
     </div>
 </body>
 </html>
+
 
