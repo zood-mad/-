@@ -5,65 +5,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Приглашение на День Рождения</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+        
         body {
-            background: linear-gradient(to right, #ff4da6, #ff99cc);
-            text-align: center;
-            font-family: 'Poppins', sans-serif;
-            color: white;
             margin: 0;
             padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #ffe6f2;
+            color: #333;
+            text-align: center;
         }
         .container {
-            max-width: 600px;
+            max-width: 800px;
             margin: 50px auto;
             padding: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        .header {
+            background: linear-gradient(to right, #ff4da6, #ff99cc);
+            padding: 40px;
+            color: white;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
         }
         h1 {
-            font-size: 40px;
-            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+            font-size: 36px;
+            margin: 0;
+        }
+        .details {
+            padding: 30px;
         }
         p {
-            font-size: 22px;
-            margin: 15px 0;
+            font-size: 18px;
+            margin: 10px 0;
         }
         .highlight {
             font-weight: bold;
-            color: yellow;
+            color: #ff4da6;
         }
         .btn {
             display: inline-block;
             margin-top: 20px;
             padding: 12px 24px;
-            font-size: 20px;
+            font-size: 18px;
             font-weight: bold;
-            color: #ff4da6;
-            background: white;
-            border: none;
+            color: white;
+            background: #ff4da6;
             border-radius: 30px;
-            cursor: pointer;
-            transition: 0.3s;
             text-decoration: none;
+            transition: 0.3s;
         }
         .btn:hover {
-            background: yellow;
-            color: #ff4da6;
+            background: #ff3385;
+        }
+        .footer {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f8f8f8;
+            border-bottom-left-radius: 15px;
+            border-bottom-right-radius: 15px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Ты приглашен на День Рождения Айзере! 🎉</h1>
-        <p><strong>📅 Дата:</strong> 9 апреля</p>
-        <p><strong>⏰ Время:</strong> 15:00</p>
-        <p><strong>📍 Место:</strong> кафе Janymsoul, Караганда</p>
-        <p><strong>📌 Адрес:</strong> Проспект Нуркена Абдирова 12</p>
-        <p><strong>👗 Дресс-код:</strong> <span class="highlight">Смелые цвета</span></p>
-        <p>Будем веселиться и радоваться вместе! Жду тебя! 🎂🥳</p>
-        <a href="#" class="btn">Я приду! 🎈</a>
+        <div class="header">
+            <h1>Ты приглашен на День Рождения Айзере! 🎉</h1>
+        </div>
+        <div class="details">
+            <p><strong>📅 Дата:</strong> 9 августа</p>
+            <p><strong>⏰ Время:</strong> 15:00</p>
+            <p><strong>📍 Место:</strong> кафе Janymsoul, Караганда</p>
+            <p><strong>📌 Адрес:</strong> Проспект Нуркена Абдирова 12</p>
+            <p><strong>👗 Дресс-код:</strong> <span class="highlight">Смелые цвета</span></p>
+            <p>Будем веселиться и радоваться вместе! Жду тебя! 🎂🥳</p>
+            <a href="#" class="btn">Я приду! 🎈</a>
+        </div>
+        <div class="footer">
+            <p>С любовью, Айзере 💖</p>
+        </div>
     </div>
 </body>
 </html>
+
