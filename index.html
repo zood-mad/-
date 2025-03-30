@@ -24,6 +24,13 @@
             background-size: cover;
             background-position: center;
             flex-direction: column;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         #page1 {
             background: url('https://github.com/zood-mad/-/raw/main/68513d35-cce1-429b-b601-2dda8d5251b6.jpg') center/cover no-repeat;
@@ -33,13 +40,25 @@
             background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;
             color: black;
         }
+        .blur-overlay {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px);
+            z-index: 0;
+        }
         .content {
-            padding: 10px;
+            padding: 20px;
+            position: relative;
+            z-index: 1;
         }
         .header {
             font-size: 50px;
             font-weight: bold;
             font-family: 'Great Vibes', cursive;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         p {
             font-size: 28px;
@@ -58,13 +77,13 @@
             font-size: 24px;
             font-weight: bold;
             color: white;
-            background: #d63384;
+            background: linear-gradient(45deg, #ff758c, #ff7eb3);
             border-radius: 15px;
             text-decoration: none;
             transition: 0.3s;
         }
         .btn:hover {
-            background: #c2185b;
+            background: linear-gradient(45deg, #ff5f6d, #ffc371);
         }
         .heart-container {
             display: none;
@@ -79,9 +98,17 @@
             cursor: pointer;
             font-size: 24px;
             margin-top: 10px;
-            text-decoration: underline;
-            color: #d63384;
-            font-weight: bold;
+            text-decoration: none;
+            background: #ff85a2;
+            padding: 12px;
+            border-radius: 50px;
+            display: inline-flex;
+            align-items: center;
+            color: white;
+        }
+        .music-button img {
+            width: 24px;
+            margin-right: 8px;
         }
         .countdown {
             font-size: 24px;
@@ -95,15 +122,19 @@
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
             <p><strong>09.04.2025</strong></p>
-            <button class="music-button" onclick="toggleMusic()">Музыка</button>
+            <button class="music-button" onclick="toggleMusic()">
+                <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
+            </button>
         </div>
     </div>
     <div class="section default-bg">
+        <div class="blur-overlay"></div>
         <div class="content left">
             <p>Всем привет! Приглашаю вас на мой день рождения, где будет караоке, вкусная еда и море позитивных эмоций.</p>
         </div>
     </div>
     <div class="section default-bg">
+        <div class="blur-overlay"></div>
         <div class="content">
             <div class="countdown" id="countdown"></div>
             <div class="calendar">
@@ -112,6 +143,7 @@
         </div>
     </div>
     <div class="section default-bg">
+        <div class="blur-overlay"></div>
         <div class="content">
             <p><strong>Адрес:</strong> Караганда, Nurkena Abdirova prospekt 12</p>
             <a href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16" target="_blank">
@@ -130,27 +162,10 @@
             document.getElementById('confirm-text').style.display = 'block';
             document.location.href = '#last';
         }
-        function updateCountdown() {
-            const eventDate = new Date('April 9, 2025 15:00:00').getTime();
-            setInterval(() => {
-                const now = new Date().getTime();
-                const timeLeft = eventDate - now;
-                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                document.getElementById('countdown').innerHTML = `${days} дн. ${hours} ч. ${minutes} м. ${seconds} с.`;
-            }, 1000);
-        }
         function toggleMusic() {
             let music = document.getElementById("bg-music");
-            if (music.paused) {
-                music.play();
-            } else {
-                music.pause();
-            }
+            music.paused ? music.play() : music.pause();
         }
-        updateCountdown();
     </script>
 </body>
 </html>
