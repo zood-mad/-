@@ -158,6 +158,14 @@
         </div>
     </div>
     <script>
+        function toggleMusic() {
+            var music = document.getElementById("bg-music");
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
         function confirmAttendance() {
             document.getElementById("confirmation").classList.remove("hidden");
         }
