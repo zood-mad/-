@@ -112,6 +112,9 @@
             padding: 10px;
             border-radius: 10px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -141,6 +144,12 @@
             <a class="btn" href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16">Открыть карту</a>
         </div>
     </div>
+    <div class="section default-bg">
+        <div class="content">
+            <button class="btn" onclick="confirmAttendance()">Я приду</button>
+            <p id="confirmation" class="hidden">Я тебя жду!</p>
+        </div>
+    </div>
     <script>
         function updateCountdown() {
             const eventDate = new Date("April 9, 2025 15:00:00").getTime();
@@ -154,9 +163,8 @@
                 document.getElementById("countdown").innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
             }, 1000);
         }
-        function toggleMusic() {
-            const music = document.getElementById("bg-music");
-            music.paused ? music.play() : music.pause();
+        function confirmAttendance() {
+            document.getElementById("confirmation").classList.remove("hidden");
         }
         updateCountdown();
     </script>
