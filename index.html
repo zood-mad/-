@@ -29,6 +29,16 @@
             animation: fadeIn 1s ease-in-out;
             padding: 20px;
         }
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 0;
+        }
         .content {
             position: relative;
             z-index: 1;
@@ -87,6 +97,9 @@
             display: inline-flex;
             align-items: center;
         }
+        .music-button:hover {
+            background: #ff6584;
+        }
         .music-button img {
             width: 24px;
             margin-right: 8px;
@@ -98,6 +111,9 @@
             color: white;
             padding: 10px;
             border-radius: 10px;
+        }
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -124,6 +140,12 @@
     </div>
     <div class="section default-bg">
         <div class="content">
+            <p>До мероприятия:</p>
+            <div class="countdown" id="countdown"></div>
+        </div>
+    </div>
+    <div class="section default-bg">
+        <div class="content">
             <p>Адрес:</p>
             <p>Караганда, Nurkena Abdirova prospekt 12</p>
             <a class="btn" href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16">Открыть карту</a>
@@ -137,6 +159,17 @@
         </div>
     </div>
     <script>
+        function toggleMusic() {
+            var music = document.getElementById("bg-music");
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
+        }
+        function confirmAttendance() {
+            document.getElementById("confirmation").classList.remove("hidden");
+        }
         function updateCountdown() {
             const eventDate = new Date("April 9, 2025 15:00:00").getTime();
             setInterval(() => {
