@@ -45,13 +45,10 @@
             font-family: 'Playfair Display', serif;
             margin: 10px 0;
         }
-        .calendar {
-            margin: 10px auto;
-            width: 180px;
-            text-align: center;
-        }
         .calendar img {
             width: 100%;
+            max-width: 400px;
+            margin-top: 20px;
         }
         .btn {
             display: inline-block;
@@ -88,7 +85,7 @@
         .countdown {
             font-size: 24px;
             font-weight: bold;
-            margin-top: 10px;
+            margin-bottom: 20px;
         }
     </style>
 </head>
@@ -96,7 +93,7 @@
     <div class="section" id="page1">
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
-            <p><strong>09.04.2025</strong> - <span id="countdown"></span></p>
+            <p><strong>09.04.2025</strong></p>
             <button class="music-button" onclick="toggleMusic()">Музыка</button>
         </div>
     </div>
@@ -106,7 +103,8 @@
         </div>
     </div>
     <div class="section default-bg">
-        <div class="content right">
+        <div class="content">
+            <div class="countdown" id="countdown"></div>
             <div class="calendar">
                 <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
             </div>
