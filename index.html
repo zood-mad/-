@@ -14,7 +14,7 @@
         }
         body {
             font-family: 'Playfair Display', serif;
-            color: #4a4a4a;
+            color: #f8a8c7;
             text-align: center;
         }
         .section {
@@ -33,15 +33,14 @@
             padding: 20px;
         }
         .header {
-            font-size: 40px;
+            font-size: 44px;
             font-weight: bold;
-            color: #f8a8c7;
             font-family: 'Great Vibes', cursive;
         }
         p {
-            font-size: 22px;
+            font-size: 24px;
             font-family: 'Raleway', sans-serif;
-            margin: 15px 0;
+            margin: 20px 0;
         }
         .calendar {
             margin: 15px auto;
@@ -54,9 +53,9 @@
         }
         .btn {
             display: inline-block;
-            margin-top: 10px;
-            padding: 12px 30px;
-            font-size: 18px;
+            margin-top: 20px;
+            padding: 14px 34px;
+            font-size: 20px;
             font-weight: bold;
             color: white;
             background: #d63384;
@@ -70,7 +69,7 @@
         .heart-container {
             display: none;
             margin-top: 20px;
-            font-size: 24px;
+            font-size: 26px;
             color: white;
             background: #d63384;
             padding: 15px;
@@ -78,16 +77,14 @@
         }
         .music-button {
             cursor: pointer;
-            font-size: 18px;
+            font-size: 20px;
             margin-top: 15px;
-            color: #d63384;
             text-decoration: underline;
         }
         .countdown {
-            font-size: 20px;
+            font-size: 24px;
             font-weight: bold;
             margin-top: 15px;
-            color: #d63384;
         }
     </style>
 </head>
@@ -96,8 +93,6 @@
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
             <p><strong>09.04.2025</strong></p>
-            <p class="countdown" id="countdown"></p>
-            <p class="music-button" onclick="playMusic()">Нажмите, чтобы воспроизвести песню</p>
         </div>
     </div>
     <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
@@ -111,26 +106,30 @@
                 <div class="month">Апрель</div>
                 <div class="day">9</div>
             </div>
-            <p><strong>Время:</strong> 15:00</p>
-            <p><strong>Место:</strong> Кафе Janymsoul, Караганда</p>
-            <p><strong>Адрес:</strong> Nurkena Abdirova prospekt 12</p>
-            <a href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/2GIS_logo.svg" width="50" alt="2ГИС"></a>
-            <p><strong>Дресс-код:</strong> <span class="highlight">Светлые цвета</span></p>
         </div>
     </div>
-    <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
-        <div class="content left">
+    <div class="section">
+        <div class="content">
+            <p class="countdown" id="countdown"></p>
+        </div>
+    </div>
+    <div class="section">
+        <div class="content">
             <p><strong>Буду рада видеть каждого из вас!</strong></p>
-            <a href="#" class="btn" onclick="document.getElementById('confirm-text').style.display = 'block'">Я приду</a>
+            <a href="#" class="btn" onclick="showConfirmation()">Я приду</a>
             <div id="confirm-text" class="heart-container">Я тебя жду</div>
+            <p><strong>Адрес:</strong> Караганда, Nurkena Abdirova prospekt 12</p>
+            <a href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16" target="_blank">
+                <img src="https://github.com/zood-mad/-/raw/main/i%20(3).webp" width="50" alt="2ГИС">
+            </a>
         </div>
     </div>
     <audio id="bg-music">
         <source src="https://github.com/zood-mad/-/raw/5e3313ead21719b9ab4732cd79dcfc54307ee1cf/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
     </audio>
     <script>
-        function playMusic() {
-            document.getElementById('bg-music').play();
+        function showConfirmation() {
+            document.getElementById('confirm-text').style.display = 'block';
         }
         function updateCountdown() {
             const eventDate = new Date('April 9, 2025 15:00:00').getTime();
