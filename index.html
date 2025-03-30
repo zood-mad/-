@@ -14,19 +14,24 @@
         }
         body {
             font-family: 'Playfair Display', serif;
-            background: url('https://github.com/zood-mad/-/raw/main/68513d35-cce1-429b-b601-2dda8d5251b6.jpg') center/cover no-repeat;
-            background-size: cover;
             color: #4a4a4a;
             text-align: center;
         }
-        .container {
-            max-width: 90%;
-            width: 350px;
-            margin: 10vh auto;
+        .section {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover;
+            background-position: center;
+        }
+        #page1 {
+            background: url('https://github.com/zood-mad/-/raw/main/68513d35-cce1-429b-b601-2dda8d5251b6.jpg') center/cover no-repeat;
+        }
+        .content {
             background: rgba(255, 240, 245, 0.6);
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            border-radius: 15px;
             backdrop-filter: blur(5px);
         }
         .header {
@@ -49,14 +54,6 @@
             border-radius: 10px;
             text-align: center;
         }
-        .calendar .month {
-            font-size: 20px;
-            font-weight: bold;
-        }
-        .calendar .day {
-            font-size: 40px;
-            font-weight: bold;
-        }
         .btn {
             display: inline-block;
             margin-top: 10px;
@@ -72,13 +69,6 @@
         .btn:hover {
             background: #c2185b;
         }
-        .heart {
-            display: none;
-            font-size: 24px;
-            color: #d63384;
-            margin-top: 15px;
-            font-family: 'Great Vibes', cursive;
-        }
         .heart-container {
             display: none;
             margin-top: 20px;
@@ -90,19 +80,6 @@
             display: inline-block;
         }
     </style>
-    <script>
-        let page = 1;
-        function nextPage() {
-            document.getElementById("page" + page).style.display = "none";
-            page++;
-            if (page <= 4) {
-                document.getElementById("page" + page).style.display = "block";
-            }
-        }
-        function confirmAttendance() {
-            document.getElementById("confirm-text").style.display = "block";
-        }
-    </script>
 </head>
 <body>
     <audio autoplay loop>
@@ -110,18 +87,14 @@
         Ваш браузер не поддерживает аудиоплеер.
     </audio>
     
-    <div class="container">
-        <div id="page1">
-            <div class="header">Приглашение на День Рождения</div>
-            <button class="btn" onclick="nextPage()">Далее</button>
-        </div>
-        
-        <div id="page2" style="display: none;">
+    <div class="section" id="page1"></div>
+    <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
+        <div class="content">
             <p>Всем привет! Приглашаю вас на моё День Рождения, где будет караоке, вкусная еда и море положительных эмоций.</p>
-            <button class="btn" onclick="nextPage()">Далее</button>
         </div>
-        
-        <div id="page3" style="display: none;">
+    </div>
+    <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
+        <div class="content">
             <div class="calendar">
                 <div class="month">Апрель</div>
                 <div class="day">9</div>
@@ -130,14 +103,15 @@
             <p><strong>Место:</strong> кафе Janymsoul, Караганда</p>
             <p><strong>Адрес:</strong> Nurkena Abdirova prospekt 12</p>
             <p><strong>Дресс-код:</strong> <span class="highlight">Светлые цвета</span></p>
-            <button class="btn" onclick="nextPage()">Далее</button>
         </div>
-        
-        <div id="page4" style="display: none;">
+    </div>
+    <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
+        <div class="content">
             <p><strong>Буду рада видеть каждого из вас!</strong></p>
-            <a href="#" class="btn" onclick="confirmAttendance()">Я приду</a>
+            <a href="#" class="btn" onclick="document.getElementById('confirm-text').style.display = 'block'">Я приду</a>
             <div id="confirm-text" class="heart-container">❤️ Я тебя жду ❤️</div>
         </div>
     </div>
 </body>
 </html>
+
