@@ -45,7 +45,7 @@
             padding: 20px;
             position: relative;
             z-index: 1;
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(255, 255, 255, 0.85);
             border-radius: 15px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -53,14 +53,13 @@
             font-size: 50px;
             font-weight: bold;
             font-family: 'Great Vibes', cursive;
-            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #d12c6d;
         }
         p {
             font-size: 28px;
             font-family: 'Playfair Display', serif;
             margin: 10px 0;
+            color: #333;
         }
         .calendar img {
             width: 90%;
@@ -136,15 +135,6 @@
             <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
         </div>
     </div>
-    <div class="section default-bg">
-        <div class="content">
-            <p>Адрес:</p>
-            <p>Караганда, Nurkena Abdirova prospekt 12</p>
-            <a class="btn" href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16">
-                <img src="https://github.com/zood-mad/-/raw/main/i%20(3).webp" alt="2GIS">
-            </a>
-        </div>
-    </div>
     <script>
         function updateCountdown() {
             const eventDate = new Date("April 9, 2025 15:00:00").getTime();
@@ -160,10 +150,10 @@
         }
         function toggleMusic() {
             const music = document.getElementById("bg-music");
-            const icon = document.getElementById("music-icon");
             music.paused ? music.play() : music.pause();
         }
         updateCountdown();
     </script>
 </body>
 </html>
+
