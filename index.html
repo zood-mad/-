@@ -122,6 +122,7 @@
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
             <p><strong>09.04.2025</strong></p>
+            <div class="countdown" id="countdown"></div>
             <button class="music-button" onclick="toggleMusic()">
                 <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
             </button>
@@ -136,7 +137,6 @@
     <div class="section default-bg">
         <div class="blur-overlay"></div>
         <div class="content">
-            <div class="countdown" id="countdown"></div>
             <div class="calendar">
                 <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
             </div>
@@ -146,6 +146,7 @@
         <div class="blur-overlay"></div>
         <div class="content">
             <p><strong>Адрес:</strong> Караганда, Nurkena Abdirova prospekt 12</p>
+            <p><strong>Дресс-код:</strong> Светлые цвета</p>
             <a href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16" target="_blank">
                 <img src="https://github.com/zood-mad/-/raw/main/i%20(3).webp" width="50" alt="2ГИС">
             </a>
@@ -154,17 +155,10 @@
             <div id="confirm-text" class="heart-container">Я тебя жду</div>
         </div>
     </div>
-    <audio id="bg-music">
-        <source src="https://github.com/zood-mad/-/raw/5e3313ead21719b9ab4732cd79dcfc54307ee1cf/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
-    </audio>
     <script>
         function showConfirmation() {
             document.getElementById('confirm-text').style.display = 'block';
             document.location.href = '#last';
-        }
-        function toggleMusic() {
-            let music = document.getElementById("bg-music");
-            music.paused ? music.play() : music.pause();
         }
     </script>
 </body>
