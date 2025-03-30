@@ -137,20 +137,6 @@
             <div class="countdown" id="countdown"></div>
         </div>
     </div>
-    <div class="section default-bg">
-        <div class="content">
-            <p>Адрес:</p>
-            <p>Караганда, Nurkena Abdirova prospekt 12</p>
-            <a class="btn" href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16">Открыть карту</a>
-        </div>
-    </div>
-    <div class="section default-bg">
-        <div class="content">
-            <p>Придете?</p>
-            <button class="btn" onclick="confirmAttendance()">Я приду</button>
-            <p id="confirmation" class="hidden">Я тебя жду!</p>
-        </div>
-    </div>
     <script>
         function toggleMusic() {
             var music = document.getElementById("bg-music");
@@ -160,9 +146,22 @@
                 music.pause();
             }
         }
+        function updateCountdown() {
+            const eventDate = new Date("April 9, 2025 15:00:00").getTime();
+            setInterval(() => {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerHTML = days + "д " + hours + "ч " + minutes + "м " + seconds + "с";
+            }, 1000);
+        }
         function confirmAttendance() {
             document.getElementById("confirmation").classList.remove("hidden");
         }
+        updateCountdown();
     </script>
 </body>
 </html>
