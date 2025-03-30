@@ -36,13 +36,12 @@
             padding: 10px;
         }
         .header {
-            font-size: 44px;
+            font-size: 50px;
             font-weight: bold;
             font-family: 'Great Vibes', cursive;
-            margin-bottom: 10px;
         }
         p {
-            font-size: 22px;
+            font-size: 28px;
             font-family: 'Playfair Display', serif;
             margin: 10px 0;
         }
@@ -51,15 +50,15 @@
             width: 180px;
             background: #d63384;
             color: white;
-            padding: 8px;
+            padding: 10px;
             border-radius: 10px;
             text-align: center;
         }
         .btn {
             display: inline-block;
             margin-top: 10px;
-            padding: 12px 30px;
-            font-size: 18px;
+            padding: 14px 34px;
+            font-size: 24px;
             font-weight: bold;
             color: white;
             background: #d63384;
@@ -73,20 +72,20 @@
         .heart-container {
             display: none;
             margin-top: 10px;
-            font-size: 24px;
+            font-size: 28px;
             color: white;
             background: #d63384;
-            padding: 12px;
+            padding: 15px;
             border-radius: 50px;
         }
         .music-button {
             cursor: pointer;
-            font-size: 18px;
+            font-size: 24px;
             margin-top: 10px;
             text-decoration: underline;
         }
         .countdown {
-            font-size: 22px;
+            font-size: 24px;
             font-weight: bold;
             margin-top: 10px;
         }
@@ -96,7 +95,8 @@
     <div class="section" id="page1">
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
-            <p><strong>09.04.2025</strong></p>
+            <p><strong>09.04.2025</strong> - <span id="countdown"></span></p>
+            <button class="music-button" onclick="toggleMusic()">Музыка</button>
         </div>
     </div>
     <div class="section default-bg">
@@ -114,11 +114,6 @@
     </div>
     <div class="section default-bg">
         <div class="content">
-            <p class="countdown" id="countdown"></p>
-        </div>
-    </div>
-    <div class="section default-bg">
-        <div class="content">
             <p><strong>Адрес:</strong> Караганда, Nurkena Abdirova prospekt 12</p>
             <a href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16" target="_blank">
                 <img src="https://github.com/zood-mad/-/raw/main/i%20(3).webp" width="50" alt="2ГИС">
@@ -131,7 +126,6 @@
     <audio id="bg-music">
         <source src="https://github.com/zood-mad/-/raw/5e3313ead21719b9ab4732cd79dcfc54307ee1cf/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
     </audio>
-    <button class="music-button" onclick="toggleMusic()">Музыка</button>
     <script>
         function showConfirmation() {
             document.getElementById('confirm-text').style.display = 'block';
@@ -145,7 +139,7 @@
                 const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                 const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
-                document.getElementById('countdown').innerHTML = `До мероприятия: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+                document.getElementById('countdown').innerHTML = `${days} дн. ${hours} ч. ${minutes} м. ${seconds} с.`;
             }, 1000);
         }
         function toggleMusic() {
