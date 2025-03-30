@@ -115,11 +115,6 @@
         .hidden {
             display: none;
         }
-        .calendar-img {
-            margin-top: 20px;
-            max-width: 100%;
-            height: auto;
-        }
     </style>
 </head>
 <body>
@@ -140,7 +135,20 @@
         <div class="content">
             <p>До мероприятия:</p>
             <div class="countdown" id="countdown"></div>
-            <img class="calendar-img" src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
+        </div>
+    </div>
+    <div class="section default-bg">
+        <div class="content">
+            <p>Адрес:</p>
+            <p>Караганда, Nurkena Abdirova prospekt 12</p>
+            <a class="btn" href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16">Открыть карту</a>
+        </div>
+    </div>
+    <div class="section default-bg">
+        <div class="content">
+            <p>Придете?</p>
+            <button class="btn" onclick="confirmAttendance()">Я приду</button>
+            <p id="confirmation" class="hidden">Я тебя жду!</p>
         </div>
     </div>
     <script>
