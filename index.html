@@ -115,6 +115,11 @@
         .hidden {
             display: none;
         }
+        .calendar-img {
+            margin-top: 20px;
+            max-width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -135,6 +140,7 @@
         <div class="content">
             <p>До мероприятия:</p>
             <div class="countdown" id="countdown"></div>
+            <img class="calendar-img" src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
         </div>
     </div>
     <script>
@@ -157,9 +163,6 @@
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
                 document.getElementById("countdown").innerHTML = days + "д " + hours + "ч " + minutes + "м " + seconds + "с";
             }, 1000);
-        }
-        function confirmAttendance() {
-            document.getElementById("confirmation").classList.remove("hidden");
         }
         updateCountdown();
     </script>
