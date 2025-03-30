@@ -112,6 +112,9 @@
             padding: 10px;
             border-radius: 10px;
         }
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -144,7 +147,8 @@
     <div class="section default-bg">
         <div class="content">
             <p>Придете?</p>
-            <button class="btn" onclick="window.location.href='#page1'">Я приду</button>
+            <button class="btn" onclick="confirmAttendance()">Я приду</button>
+            <p id="confirmation" class="hidden">Я тебя жду!</p>
         </div>
     </div>
     <script>
@@ -155,6 +159,9 @@
             } else {
                 music.pause();
             }
+        }
+        function confirmAttendance() {
+            document.getElementById("confirmation").classList.remove("hidden");
         }
     </script>
 </body>
