@@ -29,16 +29,6 @@
             animation: fadeIn 1s ease-in-out;
             padding: 20px;
         }
-        .section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            z-index: 0;
-        }
         .content {
             position: relative;
             z-index: 1;
@@ -96,9 +86,10 @@
             border-radius: 50px;
             display: inline-flex;
             align-items: center;
-        }
-        .music-button:hover {
-            background: #ff6584;
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            z-index: 1000;
         }
         .music-button img {
             width: 24px;
@@ -113,29 +104,32 @@
             border-radius: 10px;
         }
         .hidden {
-            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+        .show {
+            opacity: 1;
         }
     </style>
 </head>
 <body>
+    <button class="music-button" onclick="toggleMusic()">
+        <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
+    </button>
+    <audio id="bg-music" loop>
+        <source src="https://github.com/zood-mad/-/raw/main/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
+    </audio>
     <div class="section" id="page1">
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
             <p><strong>09.04.2025 в 15:00</strong></p>
             <p><strong>Дресс-код: светлые цвета</strong></p>
-            <button class="music-button" onclick="toggleMusic()">
-                <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
-            </button>
-            <audio id="bg-music" loop>
-                <source src="https://github.com/zood-mad/-/raw/main/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
-            </audio>
         </div>
     </div>
     <div class="section default-bg">
         <div class="content">
             <p>До мероприятия:</p>
             <div class="countdown" id="countdown"></div>
-            <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь" style="margin-top: 20px; max-width: 100%;">
         </div>
     </div>
     <div class="section default-bg">
@@ -162,7 +156,8 @@
             }
         }
         function confirmAttendance() {
-            document.getElementById("confirmation").classList.remove("hidden");
+            var confirmation = document.getElementById("confirmation");
+            confirmation.classList.add("show");
         }
         function updateCountdown() {
             const eventDate = new Date("April 9, 2025 15:00:00").getTime();
