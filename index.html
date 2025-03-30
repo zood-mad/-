@@ -34,7 +34,7 @@
         }
         #page1 {
             background: url('https://github.com/zood-mad/-/raw/main/68513d35-cce1-429b-b601-2dda8d5251b6.jpg') center/cover no-repeat;
-            color: #f8a8c7;
+            color: #ff9a9e;
         }
         .default-bg {
             background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;
@@ -85,15 +85,6 @@
         .btn:hover {
             background: linear-gradient(45deg, #ff5f6d, #ffc371);
         }
-        .heart-container {
-            display: none;
-            margin-top: 10px;
-            font-size: 28px;
-            color: white;
-            background: #d63384;
-            padding: 15px;
-            border-radius: 50px;
-        }
         .music-button {
             cursor: pointer;
             font-size: 24px;
@@ -133,17 +124,16 @@
     </div>
     <div class="section default-bg">
         <div class="blur-overlay"></div>
-        <div class="content left">
-            <p>Всем привет! Приглашаю вас на мой день рождения, где будет караоке, вкусная еда и море позитивных эмоций.</p>
+        <div class="content">
+            <div class="countdown" id="countdown"></div>
+            <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
         </div>
     </div>
     <div class="section default-bg">
         <div class="blur-overlay"></div>
         <div class="content">
-            <div class="calendar">
-                <div class="countdown" id="countdown"></div>
-                <img src="https://github.com/zood-mad/-/raw/main/%D0%A1%D0%BA%D1%80%D0%B8%D0%BD%D1%88%D0%BE%D1%82%202025-03-31%20004354.png" alt="Календарь">
-            </div>
+            <p>Адрес: Janymsoul café, Караганда, проспект Нурсултана Абдирова 12</p>
+            <a class="btn" href="https://2gis.kz/karaganda/geo/70030047127688819">Я приду!</a>
         </div>
     </div>
     <script>
@@ -153,10 +143,7 @@
                 const now = new Date().getTime();
                 const distance = eventDate - now;
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                document.getElementById("countdown").innerHTML = `До мероприятия: ${days}д ${hours}ч ${minutes}м ${seconds}с`;
+                document.getElementById("countdown").innerHTML = `До мероприятия: ${days} дней`;
             }, 1000);
         }
         updateCountdown();
