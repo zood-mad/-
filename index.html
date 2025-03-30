@@ -126,6 +126,9 @@
             <button class="music-button" onclick="toggleMusic()">
                 <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
             </button>
+            <audio id="bg-music" loop>
+                <source src="https://github.com/zood-mad/-/raw/main/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
+            </audio>
         </div>
     </div>
     <div class="section default-bg">
@@ -143,23 +146,27 @@
             </div>
         </div>
     </div>
-    <div class="section default-bg">
-        <div class="blur-overlay"></div>
-        <div class="content">
-            <p><strong>Адрес:</strong> Караганда, Nurkena Abdirova prospekt 12</p>
-            <p><strong>Дресс-код:</strong> Светлые цвета</p>
-            <a href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16" target="_blank">
-                <img src="https://github.com/zood-mad/-/raw/main/i%20(3).webp" width="50" alt="2ГИС">
-            </a>
-            <p><strong>Буду рада видеть каждого из вас!</strong></p>
-            <a href="#last" class="btn" onclick="showConfirmation()">Я приду</a>
-            <div id="confirm-text" class="heart-container">Я тебя жду</div>
-        </div>
-    </div>
     <script>
-        function showConfirmation() {
-            document.getElementById('confirm-text').style.display = 'block';
-            document.location.href = '#last';
+        function updateCountdown() {
+            const eventDate = new Date("April 9, 2025 00:00:00").getTime();
+            setInterval(function() {
+                const now = new Date().getTime();
+                const distance = eventDate - now;
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerHTML = `До мероприятия: ${days}д ${hours}ч ${minutes}м ${seconds}с`;
+            }, 1000);
+        }
+        updateCountdown();
+        function toggleMusic() {
+            const music = document.getElementById("bg-music");
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
         }
     </script>
 </body>
