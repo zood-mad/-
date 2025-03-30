@@ -27,6 +27,7 @@
             position: relative;
             overflow: hidden;
             animation: fadeIn 1s ease-in-out;
+            padding: 20px;
         }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(20px); }
@@ -41,9 +42,12 @@
             color: black;
         }
         .content {
-            padding: 10px;
+            padding: 20px;
             position: relative;
             z-index: 1;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         .header {
             font-size: 50px;
@@ -56,7 +60,7 @@
         p {
             font-size: 28px;
             font-family: 'Playfair Display', serif;
-            margin: 5px 0;
+            margin: 10px 0;
         }
         .calendar img {
             width: 90%;
@@ -74,9 +78,11 @@
             border-radius: 15px;
             text-decoration: none;
             transition: 0.3s;
+            cursor: pointer;
         }
         .btn:hover {
             background: linear-gradient(45deg, #ff5f6d, #ffc371);
+            transform: scale(1.05);
         }
         .music-button {
             cursor: pointer;
@@ -89,6 +95,10 @@
             display: inline-flex;
             align-items: center;
             color: white;
+            transition: 0.3s;
+        }
+        .music-button:hover {
+            background: #ff6584;
         }
         .music-button img {
             width: 24px;
@@ -98,6 +108,10 @@
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 10px;
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
         }
     </style>
 </head>
@@ -105,9 +119,10 @@
     <div class="section" id="page1">
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
-            <p><strong>09.04.2025</strong></p>
+            <p><strong>09.04.2025 в 15:00</strong></p>
+            <p><strong>Дресс-код: светлые цвета</strong></p>
             <button class="music-button" onclick="toggleMusic()">
-                <img src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
+                <img id="music-icon" src="https://cdn-icons-png.flaticon.com/512/727/727245.png" alt="Music"> Музыка
             </button>
             <audio id="bg-music" loop>
                 <source src="https://github.com/zood-mad/-/raw/main/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
@@ -133,7 +148,7 @@
     <script>
         function updateCountdown() {
             const eventDate = new Date("April 9, 2025 15:00:00").getTime();
-            setInterval(function() {
+            setInterval(() => {
                 const now = new Date().getTime();
                 const distance = eventDate - now;
                 const days = Math.floor(distance / (1000 * 60 * 60 * 24));
@@ -143,15 +158,12 @@
                 document.getElementById("countdown").innerHTML = `${days}д ${hours}ч ${minutes}м ${seconds}с`;
             }, 1000);
         }
-        updateCountdown();
         function toggleMusic() {
             const music = document.getElementById("bg-music");
-            if (music.paused) {
-                music.play();
-            } else {
-                music.pause();
-            }
+            const icon = document.getElementById("music-icon");
+            music.paused ? music.play() : music.pause();
         }
+        updateCountdown();
     </script>
 </body>
 </html>
