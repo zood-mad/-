@@ -29,33 +29,37 @@
         #page1 {
             background: url('https://github.com/zood-mad/-/raw/main/68513d35-cce1-429b-b601-2dda8d5251b6.jpg') center/cover no-repeat;
         }
+        .default-bg {
+            background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;
+        }
         .content {
-            padding: 20px;
+            padding: 10px;
         }
         .header {
             font-size: 44px;
             font-weight: bold;
             font-family: 'Great Vibes', cursive;
+            margin-bottom: 10px;
         }
         p {
-            font-size: 24px;
+            font-size: 22px;
             font-family: 'Playfair Display', serif;
-            margin: 20px 0;
+            margin: 10px 0;
         }
         .calendar {
-            margin: 15px auto;
+            margin: 10px auto;
             width: 180px;
             background: #d63384;
             color: white;
-            padding: 10px;
+            padding: 8px;
             border-radius: 10px;
             text-align: center;
         }
         .btn {
             display: inline-block;
-            margin-top: 20px;
-            padding: 14px 34px;
-            font-size: 20px;
+            margin-top: 10px;
+            padding: 12px 30px;
+            font-size: 18px;
             font-weight: bold;
             color: white;
             background: #d63384;
@@ -68,23 +72,23 @@
         }
         .heart-container {
             display: none;
-            margin-top: 20px;
-            font-size: 26px;
+            margin-top: 10px;
+            font-size: 24px;
             color: white;
             background: #d63384;
-            padding: 15px;
+            padding: 12px;
             border-radius: 50px;
         }
         .music-button {
             cursor: pointer;
-            font-size: 20px;
-            margin-top: 15px;
+            font-size: 18px;
+            margin-top: 10px;
             text-decoration: underline;
         }
         .countdown {
-            font-size: 24px;
+            font-size: 22px;
             font-weight: bold;
-            margin-top: 15px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -93,15 +97,14 @@
         <div class="content">
             <p class="header">Приглашение на день рождения</p>
             <p><strong>09.04.2025</strong></p>
-            <p class="music-button" onclick="toggleMusic()">🎵 Нажмите, чтобы воспроизвести песню</p>
         </div>
     </div>
-    <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
+    <div class="section default-bg">
         <div class="content left">
             <p>Всем привет! Приглашаю вас на мой день рождения, где будет караоке, вкусная еда и море позитивных эмоций.</p>
         </div>
     </div>
-    <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
+    <div class="section default-bg">
         <div class="content right">
             <div class="calendar">
                 <div class="month">Апрель</div>
@@ -109,12 +112,12 @@
             </div>
         </div>
     </div>
-    <div class="section">
+    <div class="section default-bg">
         <div class="content">
             <p class="countdown" id="countdown"></p>
         </div>
     </div>
-    <div class="section">
+    <div class="section default-bg">
         <div class="content">
             <p><strong>Адрес:</strong> Караганда, Nurkena Abdirova prospekt 12</p>
             <a href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16" target="_blank">
@@ -125,18 +128,11 @@
             <div id="confirm-text" class="heart-container">Я тебя жду</div>
         </div>
     </div>
-    <audio id="bg-music" loop>
+    <audio id="bg-music">
         <source src="https://github.com/zood-mad/-/raw/5e3313ead21719b9ab4732cd79dcfc54307ee1cf/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
     </audio>
+    <button class="music-button" onclick="toggleMusic()">Музыка</button>
     <script>
-        function toggleMusic() {
-            const music = document.getElementById("bg-music");
-            if (music.paused) {
-                music.play();
-            } else {
-                music.pause();
-            }
-        }
         function showConfirmation() {
             document.getElementById('confirm-text').style.display = 'block';
         }
@@ -151,6 +147,14 @@
                 const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
                 document.getElementById('countdown').innerHTML = `До мероприятия: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
             }, 1000);
+        }
+        function toggleMusic() {
+            let music = document.getElementById("bg-music");
+            if (music.paused) {
+                music.play();
+            } else {
+                music.pause();
+            }
         }
         updateCountdown();
     </script>
