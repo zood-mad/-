@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Приглашение на День Рождения</title>
+    <title>Приглашение на день рождения</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
         
@@ -24,11 +24,10 @@
             align-items: center;
             background-size: cover;
             background-position: center;
+            flex-direction: column;
         }
         #page1 {
             background: url('https://github.com/zood-mad/-/raw/main/68513d35-cce1-429b-b601-2dda8d5251b6.jpg') center/cover no-repeat;
-            flex-direction: column;
-            display: flex;
         }
         .content {
             padding: 20px;
@@ -77,30 +76,33 @@
             padding: 15px;
             border-radius: 50px;
         }
-        .left {
-            text-align: left;
-            padding-left: 10%;
+        .music-button {
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 15px;
+            color: #d63384;
+            text-decoration: underline;
         }
-        .right {
-            text-align: right;
-            padding-right: 10%;
+        .countdown {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 15px;
+            color: #d63384;
         }
     </style>
 </head>
 <body>
-    <audio id="bg-music" autoplay loop>
-        <source src="https://github.com/zood-mad/-/raw/5e3313ead21719b9ab4732cd79dcfc54307ee1cf/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
-        Ваш браузер не поддерживает аудиоплеер.
-    </audio>
-    
     <div class="section" id="page1">
         <div class="content">
-            <p class="header">Приглашение на День Рождения</p>
+            <p class="header">Приглашение на день рождения</p>
+            <p><strong>09.04.2025</strong></p>
+            <p class="countdown" id="countdown"></p>
+            <p class="music-button" onclick="playMusic()">Нажмите, чтобы воспроизвести песню</p>
         </div>
     </div>
     <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
         <div class="content left">
-            <p>Всем привет! Приглашаю вас на моё День Рождения, где будет караоке, вкусная еда и море положительных эмоций.</p>
+            <p>Всем привет! Приглашаю вас на мой день рождения, где будет караоке, вкусная еда и море позитивных эмоций.</p>
         </div>
     </div>
     <div class="section" style="background: url('https://github.com/zood-mad/-/raw/main/c2597be79b0e832e6fdec2ae7c198305.jpg') center/cover no-repeat;">
@@ -110,8 +112,9 @@
                 <div class="day">9</div>
             </div>
             <p><strong>Время:</strong> 15:00</p>
-            <p><strong>Место:</strong> кафе Janymsoul, Караганда</p>
+            <p><strong>Место:</strong> Кафе Janymsoul, Караганда</p>
             <p><strong>Адрес:</strong> Nurkena Abdirova prospekt 12</p>
+            <a href="https://2gis.kz/karaganda/firm/70000001046954809?m=73.091849%2C49.802908%2F16" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1c/2GIS_logo.svg" width="50" alt="2ГИС"></a>
             <p><strong>Дресс-код:</strong> <span class="highlight">Светлые цвета</span></p>
         </div>
     </div>
@@ -122,5 +125,27 @@
             <div id="confirm-text" class="heart-container">Я тебя жду</div>
         </div>
     </div>
+    <audio id="bg-music">
+        <source src="https://github.com/zood-mad/-/raw/5e3313ead21719b9ab4732cd79dcfc54307ee1cf/Nana_-_Lonely_28492718%20(mp3cut.net).mp3" type="audio/mpeg">
+    </audio>
+    <script>
+        function playMusic() {
+            document.getElementById('bg-music').play();
+        }
+        function updateCountdown() {
+            const eventDate = new Date('April 9, 2025 15:00:00').getTime();
+            setInterval(() => {
+                const now = new Date().getTime();
+                const timeLeft = eventDate - now;
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+                document.getElementById('countdown').innerHTML = `До мероприятия: ${days} дней, ${hours} часов, ${minutes} минут, ${seconds} секунд`;
+            }, 1000);
+        }
+        updateCountdown();
+    </script>
 </body>
 </html>
+
